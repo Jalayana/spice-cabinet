@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Spice Cabinet</title>
+  </head>
+  <body>
+    <header>
+      <h1>Seasoned & Accounted For</h1>
+      <p>Never get caught without ....rosemary!</p>
+    </header>
+
+    <main>
+      <!--Inventory Section-->
+      <section class="inventory">
+        <div class="inventory-header">
+          <h2>My Spice Cabinet</h2>
+          <input
+            type="search"
+            placeholder="Whatcha looking for?"
+            id="spice-search"
+          />
+
+          <button id="add-spice-btn">+ Add Spice</button>
+        </div>
+
+        <!--Wooden Spice Rack-->
+        <div class="spice-rack">
+          <!--First Shelf-->
+          <div class="shelf" id="shelf-1">
+            <button class="spice-item" data-spice-id="1">
+              <div class="spice-jar paprika-jar">
+                <span class="jar-label">Paprika</span>
+              </div>
+              <span class="spice-name">Paprika</span>
+            </button>
+
+            <button type="button" class="spice-item" data-spice-id="2">
+              <div class="spice-jar salt-jar">
+                <span class="jar-label">Salt</span>
+              </div>
+              <span class="spice-name">Salt</span>
+            </button>
+          </div>
+
+          <!--Second Shelf-->
+
+          <div class="shelf" id="shelf-2">
+            <button type="button" class="spice-item" data-spice-id="3">
+              <div class="spice-jar rosemary-jar">
+                <span class="jar-label">Rosemary</span>
+              </div>
+              <span class="spice-name">Rosemary</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!--Spice Details Menu-->
+
+      <aside class="spice-details" id="spice-details" hidden>
+        <h2 id="detail-spice-name">Paprika</h2>
+        <p id="container-count">3 containers</p>
+
+        <div class="container-list" id="container-list">
+          <article class="container-item" data-container-id="101">
+            <h4>McCormick</h4>
+
+            <label for="amount-101">Amount remaining:</label>
+            <select id="amount-101">
+              <option value="full">Full</option>
+              <option value="three-quarters">3/4</option>
+              <option value="half">Half</option>
+              <option value="quarter">1/4</option>
+              <option value="empty">Empty</option>
+            </select>
+
+            <button type="button" class="add-container-btn">+1</button>
+
+            <button type="button" class="remove-container-btn">
+              Remove container
+            </button>
+          </article>
+
+          <article class="container-item" data-container-id="102">
+            <h4>Great Value</h4>
+
+            <label for="amount-102">Amount remaining:</label>
+            <select id="amount-102">
+              <option value="full">Full</option>
+              <option value="three-quarters">3/4</option>
+              <option value="half">Half</option>
+              <option value="quarter">1/4</option>
+              <option value="empty">Empty</option>
+            </select>
+
+            <button type="button" class="add-container-btn">+1</button>
+
+            <button type="button" class="remove-container-btn">
+              Remove container
+            </button>
+          </article>
+        </div>
+
+        <button type="button" id="add-container-btn">
+          + Add another container
+        </button>
+
+        <button type="button" id="close-details-btn">Close</button>
+      </aside>
+
+      <!--Add spice form-->
+
+      <section class="add-spice-form" id="add-spice-form" hidden>
+        <h2>Add a Spice</h2>
+
+        <form id="spice-form">
+          <label for="spice-name"> Spice Name</label>
+          <input type="text" id="spice-name" required />
+
+          <label for="spice-brand">Brand</label>
+          <input type="text" id="spice-brand" required />
+
+          <button type="submit">Add Spice</button>
+        </form>
+      </section>
+
+      <!--Shopping List -->
+      <section class="shopping-list" id="shopping-list">
+        <h2>Shopping List</h2>
+        <ul id="shopping-list-items">
+          <li>Salt</li>
+        </ul>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
