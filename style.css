@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --warm-cream: #f7f0e5;
+  --wood-brown: #9b6a42;
+  --terracotta: #c97852;
+  --sage-green: #879477;
+  --light-wood: #c99b6d;
+  --dark-text: #3d342d;
+  --white: #ffffff;
+}
+
+body {
+  background-color: var(--warm-cream);
+  color: var(--dark-text);
+  font-family: "Urbanist", sans-serif;
+  font-optical-sizing: auto;
+}
+
+header {
+  text-align: center;
+  padding: 30px 15px;
+}
+header h1 {
+  font-family: "Handlee", cursive;
+  font-size: 64px;
+  color: var(--sage-green);
+  margin: 0;
+}
