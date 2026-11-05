@@ -29,3 +29,42 @@ header h1 {
   color: var(--sage-green);
   margin: 0;
 }
+
+header p {
+  font-size: 25px;
+  color: var(--terracotta);
+}
+
+main {
+  text-align: center;
+}
+
+.inventory-header {
+  padding: 50px;
+}
+
+.inventory-header h2 {
+  font-size: 58px;
+}
+
+input,
+#search-spice-btn {
+  padding: 5px;
+  border-radius: 10px;
+  border: 3px solid var(--terracotta);
+  font-size: 20px;
+  text-align: center;
+}
+
+#search-spice-btn {
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.3s ease;
+}
+
+#search-spice-btn:hover {
+  background-color: var(--terracotta);
+  color: var(--white);
+}
