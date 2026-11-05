@@ -8,6 +8,7 @@
   --terracotta: #c97852;
   --sage-green: #879477;
   --light-wood: #c99b6d;
+  --jar-lid: #35312e;
   --dark-text: #3d342d;
   --white: #ffffff;
 }
@@ -90,4 +91,37 @@ input,
   background: var(--light-wood);
   border-radius: 2px;
   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.25);
+}
+
+.spice-jar {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height: 110px;
+  width: 75px;
+  border-radius: 4px;
+}
+
+.jar-lid {
+  background-color: var(--jar-lid);
+  border: 3px solid black;
+  height: 20px;
+  border-radius: 4px 4px 0 0;
+  flex-shrink: 0;
+}
+
+.jar-body {
+  border: 2px solid #a0d6de;
+  background-color: #d7f1f8;
+  flex-grow: 1;
+  position: relative;
+}
+
+.spice-contents {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: var(--terracotta);
+  height: 25px;
+  width: 100%;
 }
