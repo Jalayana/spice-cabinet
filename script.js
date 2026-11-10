@@ -41,10 +41,12 @@ const containers = [
 //Accepts a spiceId and returns all containers associated with that spice.
 
 function getContainersBySpiceId(spiceId) {
-  const containerSpiceId = containers.filter(
+  const matchingContainers = containers.filter(
     (container) => container.spiceId === spiceId,
   );
-  return containerSpiceId;
+  return matchingContainers;
 }
 
 getContainersBySpiceId(1);
+
+function renderContainerList() {}
