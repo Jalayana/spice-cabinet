@@ -5,35 +5,35 @@ const containers = [
     containerId: 101,
     spiceId: 1,
     brand: "McCormick",
-    amount: "quarter",
+    amount: "half",
     firstReminderHandled: false,
   },
   {
     containerId: 102,
     spiceId: 2,
     brand: "Dollar Tree",
-    amount: "quarter",
+    amount: "full",
     firstReminderHandled: false,
   },
   {
     containerId: 103,
     spiceId: 3,
     brand: "McCormick",
-    amount: "quarter",
+    amount: "half",
     firstReminderHandled: false,
   },
   {
     containerId: 104,
     spiceId: 1,
     brand: "Walmart",
-    amount: "quarter",
+    amount: "three-quarters",
     firstReminderHandled: false,
   },
   {
     containerId: 105,
     spiceId: 15,
     brand: "Walmart",
-    amount: "quarter",
+    amount: "empty",
     firstReminderHandled: false,
   },
 ];
@@ -54,7 +54,6 @@ function renderContainerList(containers) {
   const containerList = document.querySelector("#container-list");
 
   //Clear previously rendered containers
-
   containerList.innerHTML = "";
 
   //Build details for each container
@@ -78,6 +77,7 @@ function renderContainerList(containers) {
 
     const amountDropDownMenu = document.createElement("select");
     amountDropDownMenu.id = `amount-${container.containerId}`;
+    amountDropDownMenu.classList.add("amount-drop-down");
 
     const fullOption = document.createElement("option");
     fullOption.setAttribute("value", "full");
@@ -142,3 +142,19 @@ function renderContainerList(containers) {
 }
 
 renderContainerList(containers);
+
+//Handle drop-down menu change
+containerList.addEventListener("change", function (event) {
+  if (event.target.classList.contains("amount-drop-down")) {
+    const containerArticle = event.target.parentElement.parentElement;
+    const containerId = Number(
+      containerArticle.getAttribute("data-container-id"),
+    );
+
+    const containerToUpdate = containers.find(
+      (container) => container.containerId === containerId,
+    );
+
+    containerToUpdate.amount = event.target.value;
+  }
+});
