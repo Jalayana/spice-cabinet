@@ -49,10 +49,9 @@ function getContainersBySpiceId(spiceId) {
 getContainersBySpiceId(1);
 
 //Generate a container list for the detailed menu
+const containerList = document.querySelector("#container-list");
 
 function renderContainerList(containers) {
-  const containerList = document.querySelector("#container-list");
-
   //Clear previously rendered containers
   containerList.innerHTML = "";
 
@@ -144,17 +143,20 @@ function renderContainerList(containers) {
 renderContainerList(containers);
 
 //Handle drop-down menu change
-containerList.addEventListener("change", function (event) {
+containerList.addEventListener("change", (event) => {
   if (event.target.classList.contains("amount-drop-down")) {
     const containerArticle = event.target.parentElement.parentElement;
+
     const containerId = Number(
       containerArticle.getAttribute("data-container-id"),
     );
 
-    const containerToUpdate = containers.find(
-      (container) => container.containerId === containerId,
-    );
+    const containerToUpdate = containers.find((container) => {
+      return container.containerId === containerId;
+    });
 
-    containerToUpdate.amount = event.target.value;
+    if (containerToUpdate) {
+      containerToUpdate.amount = event.target.value;
+    }
   }
 });
